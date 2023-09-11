@@ -1,6 +1,6 @@
 # Week 14 Assignment 
 
-Using React to create a Movie Review Page using an API and React
+Using React to create a Movie Review Page using an API
 
 
 # Getting Started with Create React App
