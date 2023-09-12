@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+/* Developer Styings */
+
+svg {
+  min-width: 50px;
+  width: 50px;
+  fill: #FFC104;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  width: 50%;
+  margin-left: auto;
+}
