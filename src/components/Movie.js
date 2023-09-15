@@ -1,5 +1,7 @@
 import React from "react";
 import Stars from "./Stars";
+import ReviewForm from "./ReviewForm";
+import ReviewList from "./ReviewList";
 
 export default class Movie extends React.Component {
   // constructor(props) {
@@ -28,12 +30,13 @@ export default class Movie extends React.Component {
     // return <div><h1>Please wait...</h1></div>
     // }
     return (
-    <div className="card w-50">
+    <div className="card">
         <img src="..." className="card-img-top" alt="..."></img>
           <div className="card-body">
             <h5 className="card-title">Card title</h5>
             <Stars />
             <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <ReviewForm />
           </div>
         {/* <img src={items.Poster} className="card-img-top"></img>
         <div className="card-body">

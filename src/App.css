@@ -52,3 +52,9 @@ svg {
   width: 50%;
   margin-left: auto;
 }
+
+.reviewItem {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+}
