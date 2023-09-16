@@ -45,6 +45,22 @@ svg {
   fill: #FFC104;
 }
 
+.movieCard {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.movieItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movieInfo{
+  width: 100%;
+}
+
 .stars {
   display: flex;
   flex-direction: row;
@@ -53,8 +69,37 @@ svg {
   margin-left: auto;
 }
 
+.reviewItems {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  max-height: 150px;
+  overflow: scroll;
+  overflow-x: hidden;
+  gap: 10px;
+}
+
+.reviewItems div {
+  flex: 1 90%;
+}
+
 .reviewItem {
   border: 1px solid black;
   border-radius: 5px;
-  padding: 1rem;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewItem p:last-of-type{
+  font-size: .75rem;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .reviewItems div {
+    flex: 1 40%;
+  }
 }

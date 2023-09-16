@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import ReviewList from "./ReviewList";
 
 function ReviewForm () {
+  // the deconstructed variable will keep and set the state for each review added.
     const [ reviews, setReviews ] = useState([])
-    const reviewAdded = () => {
-      let reviewInput = document.querySelector('#reviewEntryValue');
-      let reviewEmailInput = document.querySelector('#reviewEmailInput');
+  // function adds each review to its associated parent element. It uses the target to select that parents review and email inputs and stores to each state.
+    const reviewAdded = (e) => {
+      console.log(e.target.parentNode.parentNode.previousElementSibling.lastChild)
+      let reviewInput = e.target.parentNode.previousElementSibling;
+      let reviewEmailInput = e.target.parentNode.parentNode.previousElementSibling.lastChild;
       setReviews([
         ...reviews, 
         {reviewLog: reviewInput.value, reviewEmail: reviewEmailInput.value}
@@ -14,8 +17,8 @@ function ReviewForm () {
       reviewEmailInput.value = '';
     }
     return (
-
-      <div>
+// creates the Review component and adds the reviewList to it which it then passes the reviews array state to the ReviewList component to be used when creating the list
+      <div className="reviewForm">
         <form>
           <div className="mb-3">
             <label htmlFor="reviewEmailInput" className="form-label">Email address</label>

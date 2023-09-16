@@ -3,18 +3,14 @@ import Review from "./Review";
 
 function ReviewList (props) {
     let reviewList = [];
+    // Using the props passed down from the ReviewForm component, it will loop through those props using the Object.keys and using the key to push each Review component to the ReviewList along with the props variables.
     if(props) {
-      // Object.keys(props).map((item, index) => {
-      //   reviewList.push(<Review key={index} reviewLog={} reviewEmail={item.reviewEmail}/>);
-      //   return reviewList;
-      // })
       for(let key of Object.keys(props)) {
         reviewList.push(<Review key={key} reviewLog={props[key].reviewLog} reviewEmail={props[key].reviewEmail}/>)
       }
-      console.log(Object.keys(props))
     }
     return ( 
-      <div>
+      <div className="reviewItems">
         {reviewList}
       </div>
     )

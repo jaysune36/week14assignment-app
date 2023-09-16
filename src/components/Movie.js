@@ -1,56 +1,33 @@
 import React from "react";
 import Stars from "./Stars";
 import ReviewForm from "./ReviewForm";
-import ReviewList from "./ReviewList";
 
-export default class Movie extends React.Component {
-  // constructor(props) {
-  // super(props);
-  // this.state = {
-  //     items: [],
-  //     DataisLoaded: false
-  // };
-  // }
+function Movie(props) {
 
-  // componentDidMount() {
-  // fetch('http://www.omdbapi.com/?i=tt3896198&apikey=7887e7ff&page=5')
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       this.setState({
-  //         items: json,
-  //         DataisLoaded: true
-  //       });
-  //     })
-  // }
-
-  render() {
-    // const {DataisLoaded, items} = this.state;
-    // console.log(items)
-    // if(!DataisLoaded) {
-    // return <div><h1>Please wait...</h1></div>
-    // }
-    return (
-    <div className="card">
-        <img src="..." className="card-img-top" alt="..."></img>
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <Stars />
-            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <ReviewForm />
-          </div>
-        {/* <img src={items.Poster} className="card-img-top"></img>
+// the Movie function will use the props passed down from the movieList and create a Movie componenet. Then it will add a Stars and ReviewForm component to each
+  return (
+    <div className="card w-100 p-3 movieCard">
+      <div className="movieBanner">
+        <img src={
+            props.Poster
+          }
+          className="card-img-top"></img>
         <div className="card-body">
-          <h5 className="card-title">{items.Title}</h5>
-        </div> */}
-
-        {/* <h1>Fetch data from an api in react</h1>{
-        items.map((item) => (
-          <ul key={item.id}>
-          Title: {item.Title}
-        </ul>
-        ))
-        } */} 
+          <h5 className="card-title">
+            {
+            props.Title
+          } {props.Year}</h5>
+        </div>
       </div>
-      )
-        }
-      }
+      <div className="movieInfo">
+        <Stars />
+        <ReviewForm/>
+
+      </div>
+    </div>
+  )
+
+
+}
+
+export default Movie
